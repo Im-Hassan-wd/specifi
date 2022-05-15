@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Specify | <%= title %></title>
+</head>
+<body>
+    <div class="uploader">
+        <h3>Your PC's spec</h3>
+        <div class="image-preview">
+          <img src="/image.svg" alt="select preview">
+        </div>
+        <h5>Platform: <span><%= os.platform() %></span></h5>
+        <h5>Host name: <span><%= os.hostname() %></span></h5>
+        <h5>Release date: <span><%= os.release() %></span></h5>
+        <h5>OS type: <span><%= os.type() %></span></h5>
+        <h5>Total memory: <span><%= Math.ceil(os.totalmem() / 1024 ** 3)%>GB</span></h5>
+        <h5>Available memory: <span><%= Math.ceil(os.freemem() / 1024 ** 3) %>GB</span></h5>
+        <h5>User's name: <span><%= os.userInfo().username %></span></h5>
+        <h5>Version: <span><%= os.version() %></span></h5>
+        <h5>Up time: <span><%= Math.floor(os.uptime() / 60 / 60) %>hrs</span></h5>
+        <% os.cpus().forEach(cpu => { %>
+          <h5>Model: <span><%= cpu.model %></span></h5>
+          <h5>Processor speed: <span><%= cpu.speed / 1000 %>GHZ</span></h5>
+        <% }) %>
+      </div>
+</body>
+</html>
