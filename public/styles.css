@@ -48,11 +48,16 @@ p {
   font-weight: bold;
 }
 
-.logo .svg {
-  animation: rotate infinite ease-in-out;
+.img-div {
+  width: 32px;
 }
 
-@keyframes rotate {
+.logo img {
+  animation: rotate 3s linear infinite;
+  width: 100%;
+}
+
+@keyframes rotate{
   from {
     transform: rotate(0deg);
   }
