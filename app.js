@@ -2,6 +2,7 @@ const express = require('express');
 const os = require('os');
 
 console.log(os);
+console.log(os.cpus()[1].model);
 
 // express app
 const app = express();

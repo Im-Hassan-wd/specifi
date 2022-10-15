@@ -29,10 +29,8 @@
         <h5>User's name: <span><%= os.userInfo().username %></span></h5>
         <h5>Version: <span><%= os.version() %></span></h5>
         <h5>Up time: <span><%= Math.floor(os.uptime() / 60 / 60) %>hrs</span></h5>
-        <% os.cpus().forEach(cpu => { %>
-          <h5>Model: <span><%= cpu.model %></span></h5>
-          <h5>Processor speed: <span><%= cpu.speed / 1000 %>GHZ</span></h5>
-        <% }) %>
+        <h5>Model: <span><%= os.cpus()[0].model %></span></h5>
+        <h5>Processor speed: <span><%= os.cpus()[0].speed/1000 %>GHZ</span></h5>
       </div>
     </section>
 </body>
