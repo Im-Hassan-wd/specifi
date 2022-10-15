@@ -48,7 +48,7 @@ p {
   font-weight: bold;
 }
 
-.logo svg {
+.logo .svg {
   animation: rotate infinite ease-in-out;
 }
 
