@@ -1,8 +1,32 @@
 const express = require('express');
 const os = require('os');
 
-console.log(os);
-console.log(os.cpus()[1].model);
+const fs = require('fs');
+const client = require('https');
+
+// function downloadImage(url, filepath) {
+//     return new Promise((resolve, reject) => {
+//         client.get(url, (res) => {
+//             if (res.statusCode === 200) {
+//                 console.log(filepath)
+//                 res.pipe(fs.createWriteStream('public' + filepath))
+//                     .on('error', reject)
+//                     .once('close', () => resolve(filepath));
+//             } else {
+//                 // Consume response data to free up memory
+//                 res.resume();
+//                 reject(new Error(`Request Failed With a Status Code: ${res.statusCode}`));
+
+//             }
+//         });
+//     });
+// }
+
+// downloadImage('https://www.google.com/images/srpr/logo3w.png', 'public/lena.png')
+//     .then(console.log)
+//     .catch(console.error);
+
+
 
 // express app
 const app = express();
